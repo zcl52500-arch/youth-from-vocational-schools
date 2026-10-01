@@ -1,0 +1,12 @@
+# 探索档案数据。图片/文件上传后，把相对路径填入 material。
+- id: exploration-01
+  title: 成长小组
+  question: "当学生需要成长，我们能做什么？"
+  year: ""
+  cover: ""
+  status: "材料待整理"
+  problem: "我们当时遇到了什么？"
+  why: "为什么想试这个？"
+  action: "具体做了什么？"
+  happened: "发生了什么？"
+  reflection: "今天重新看，我们怎么理解它？"
