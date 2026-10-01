@@ -1,0 +1,11 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{ page.title }}｜他们的十年</title><link rel="stylesheet" href="{{ '/style.css' | relative_url }}"></head><body>
+<header class="site-header"><div class="brand"><a href="{{ '/' | relative_url }}">看见职校生</a></div><nav class="nav-7"><a href="{{ '/why/' | relative_url }}">为什么是职校生</a><a href="{{ '/history/' | relative_url }}">从哪里开始</a><a href="{{ '/stories/' | relative_url }}">他们的十年</a><a href="{{ '/explorations/' | relative_url }}">我们做过的探索</a><a href="{{ '/after-ten-years/' | relative_url }}">十年之后</a><a href="{{ '/questions/' | relative_url }}">还想看见什么</a><a href="{{ '/archive/' | relative_url }}">十年档案</a></nav></header>
+<main><section class="case-hero"><p class="eyebrow">THEIR TEN YEARS · STORY</p><h1>{{ page.title }}</h1><p class="dek">{{ page.intro }}</p><div class="case-meta"><span>{{ page.met }}</span><span>{{ page.stage }}</span><span>{{ page.revisited }}</span></div><a class="back-home" href="{{ '/stories/' | relative_url }}">← 返回「他们的十年」</a></section>
+<section class="case-body">{% if page.image %}<img class="content-photo" src="{{ page.image | relative_url }}" alt="{{ page.title }}">{% endif %}
+<div class="case-chapter"><span class="chapter-tag">01 · 当时</span><h2>那时候，他/她正在经历什么？</h2>{{ page.then | markdownify }}</div>
+<div class="case-chapter"><span class="chapter-tag">02 · 后来</span><h2>离开那个现场之后</h2>{{ page.later | markdownify }}</div>
+<div class="case-chapter"><span class="chapter-tag">03 · 现在</span><h2>今天，他/她怎样生活？</h2>{{ page.now | markdownify }}</div>
+<div class="case-chapter"><span class="chapter-tag">04 · 回头看</span><h2>十年以后，再看当年的自己</h2>{{ page.looking_back | markdownify }}</div>
+<div class="case-chapter"><span class="chapter-tag">05 · 他/她自己说</span><h2>把解释权还给本人</h2>{{ page.own_words | markdownify }}</div>
+{{ content }}<a class="back" href="{{ '/stories/' | relative_url }}">← 返回人物档案</a></section></main>
+<footer><span>看见职校生</span><span>HOPE学堂 · 2016—2026</span></footer></body></html>
