@@ -4,8 +4,8 @@
 <section class="case-body">{% if page.cover %}<img class="content-photo" src="{{ page.cover | relative_url }}" alt="{{ page.title }}">{% endif %}
 <div class="case-chapter"><span class="chapter-tag">01 · 遇到了什么</span><h2>问题是什么？</h2>{{ page.problem | markdownify }}</div>
 <div class="case-chapter"><span class="chapter-tag">02 · 为什么想试</span><h2>为什么是这个方向？</h2>{{ page.why | markdownify }}</div>
-<div class="case-chapter"><span class="chapter-tag">03 · 具体做了什么</span><h2>行动是怎样发生的？</h2>{{ page.action | markdownify }}</div>
+<div class="case-chapter"><span class="chapter-tag">03 · 具体做了什么</span><h2>行动是怎样发生的？</h2>{{ page.action | markdownify }}{% if page.gallery %}<div class="media-grid">{% for media in page.gallery %}<figure><img src="{{ media.src | relative_url }}" alt="{{ media.alt | default: page.title }}"><figcaption>{{ media.caption }}</figcaption></figure>{% endfor %}</div>{% endif %}</div>
 <div class="case-chapter"><span class="chapter-tag">04 · 发生了什么</span><h2>包括预料之外的部分</h2>{{ page.happened | markdownify }}</div>
-<div class="case-chapter"><span class="chapter-tag">05 · 今天怎么理解</span><h2>如果今天再做一次</h2>{{ page.reflection | markdownify }}</div>
+<div class="case-chapter"><span class="chapter-tag">05 · 今天怎么理解</span><h2>如果今天再做一次</h2>{{ page.reflection | markdownify }}</div>{% if page.materials %}<div class="case-chapter"><span class="chapter-tag">相关材料</span><h2>原始材料</h2><div class="material-links">{% for item in page.materials %}<a href="{{ item.url | relative_url }}">{{ item.label }} →</a>{% endfor %}</div></div>{% endif %}
 {{ content }}<a class="back" href="{{ '/explorations/' | relative_url }}">← 返回探索档案</a></section></main>
 <footer><span>看见职校生</span><span>HOPE学堂 · 2016—2026</span></footer></body></html>
