@@ -17,5 +17,14 @@ now: |
 looking_back: |
   材料待整理。放入十年后的真实回望。
 own_words: |
-  材料待整理。可以是一段口述、一封信、一篇旧文章或新的回答。
+  材料待整理。可以是一段口述、一封信、一篇旧文章或新的回答.
+# 可选：在“当时”章节插入照片。没有照片时整段删除即可。
+# then_media:
+#   - src: "/images/people/照片.jpg"
+#     alt: "照片内容说明"
+#     caption: "年份 / 地点 / 来源"
+# 可选：原始材料链接。
+# materials:
+#   - label: "学生写作原件"
+#     url: "/assets/archive/文件.pdf"
 ---
