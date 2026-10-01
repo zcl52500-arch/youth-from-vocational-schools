@@ -230,3 +230,13 @@ footer{display:flex;justify-content:space-between;padding:22px 5vw;background:va
 }
 
 .content-photo{display:block;width:100%;height:auto;margin:20px 0 60px;border:1px solid var(--line)}
+
+/* 3.2 内容媒体：照片、说明与原始材料 */
+.media-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:34px 0}
+.media-grid figure{margin:0;background:#fff;border:1px solid var(--line)}
+.media-grid img{display:block;width:100%;height:auto}
+.media-grid figcaption{padding:10px 12px;font-size:12px;line-height:1.6;color:var(--muted)}
+.material-links{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.material-links a{padding:16px 0;border-bottom:1px solid var(--line);font-weight:800;color:var(--blue);text-decoration:none}
+.material-links a:hover{color:var(--green)}
+@media(max-width:700px){.media-grid{grid-template-columns:1fr}}
