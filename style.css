@@ -228,3 +228,5 @@ footer{display:flex;justify-content:space-between;padding:22px 5vw;background:va
   .archive-shelf{grid-template-columns:1fr}
   .archive-thumb,.archive-object-tall .archive-thumb{height:190px}
 }
+
+.content-photo{display:block;width:100%;height:auto;margin:20px 0 60px;border:1px solid var(--line)}
