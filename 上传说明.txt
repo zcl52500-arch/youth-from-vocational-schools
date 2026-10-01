@@ -1,0 +1,20 @@
+看见职校生 · 第三版
+
+这是在最初蓝/黄/绿视觉母版上重建的版本，不是之前的红色骨架版。
+
+上传方式：
+1. 保留你 GitHub 仓库现有的 images/ 文件夹，尤其是 images/HOPE学堂logo.png。
+2. 将本文件夹中的 index.html、style.css，以及 7 个栏目文件夹上传到仓库根目录，覆盖同名文件。
+3. 不需要上传或删除现有 images/。
+4. GitHub Pages 保持 main / (root)。
+
+本版栏目：
+why/
+history/
+stories/
+explorations/
+after-ten-years/
+questions/
+archive/
+
+注意：页面中的“待整理”是有意保留的内容占位，不虚构历史材料。

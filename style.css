@@ -97,10 +97,37 @@ footer{display:flex;justify-content:space-between;padding:22px 5vw;background:va
   .story-hero{padding-top:80px}
 }
 
-
-/* 2026 archive expansion — additive only; original visual system preserved */
-.section-link{display:inline-block;margin-top:24px;color:var(--blue);font-weight:800;text-decoration:none;border-bottom:2px solid var(--yellow);padding-bottom:2px}
-.section-link:hover{opacity:.72}
-.section-actions{margin-top:28px}
-.hope-logo-fallback{font-size:22px;font-weight:900;letter-spacing:.06em;color:var(--ink);margin:0 auto 14px}
-@media(min-width:801px) and (max-width:1180px){nav{gap:12px}nav a{font-size:11px}}
+/* ===== 第三版：在原视觉系统上增加长期档案型网站组件 ===== */
+.brand a{text-decoration:none;color:inherit}
+.nav-7{gap:16px;flex-wrap:wrap;justify-content:flex-end}
+.nav-7 a{white-space:nowrap}
+.section-link{display:inline-block;margin-top:18px;color:var(--blue);font-weight:800;text-decoration:none;border-bottom:2px solid var(--yellow);padding-bottom:2px}
+.section-link:hover{color:var(--green)}
+.section-kicker{font-size:12px;letter-spacing:.14em;font-weight:800;color:var(--blue);text-transform:uppercase;margin:0 0 12px}
+.longterm-note{margin-top:28px;font-size:13px;color:var(--muted);letter-spacing:.04em}
+.entry-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px}
+.entry-card{display:block;padding:26px;border:1px solid var(--line);background:#fff;text-decoration:none;transition:.2s transform,.2s border-color}
+.entry-card:hover{transform:translateY(-3px);border-color:var(--blue)}
+.entry-card .num{font-size:12px;letter-spacing:.12em;color:var(--blue);font-weight:800}
+.entry-card h3{margin:8px 0 8px;font-size:22px;line-height:1.35}
+.entry-card p{margin:0;color:var(--muted);font-size:14px}
+.page-hero{padding:9vw 10vw 6vw;border-bottom:1px solid var(--line)}
+.page-hero .eyebrow{color:var(--blue)}
+.page-hero h1{font-size:clamp(44px,7vw,96px);line-height:1.02;margin:12px 0 24px}
+.page-hero p{max-width:720px;font-size:18px;color:var(--muted)}
+.content-list{max-width:980px;margin:0 auto;padding:6vw 5vw 10vw}
+.content-item{display:grid;grid-template-columns:100px 1fr;gap:28px;padding:30px 0;border-top:1px solid var(--line)}
+.content-item:last-child{border-bottom:1px solid var(--line)}
+.content-item .meta{font-size:12px;color:var(--blue);font-weight:800;letter-spacing:.08em}
+.content-item h2,.content-item h3{margin:0 0 8px;line-height:1.35}
+.content-item p{margin:0;color:var(--muted)}
+.content-item a{text-decoration:none}
+.content-item a:hover h3{color:var(--blue)}
+.template-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:28px}
+.template-steps span{padding:14px 10px;border-top:3px solid var(--yellow);font-size:13px;font-weight:700}
+.archive-note{background:var(--dark);color:#fff;padding:5vw 10vw}
+.archive-note p{max-width:760px;color:#c9d0d4}
+.back-home{display:inline-block;margin-top:24px;font-weight:800;color:var(--blue);text-decoration:none}
+.hope-signature-fallback{font-size:22px!important;font-weight:900;letter-spacing:.04em!important;color:var(--ink);opacity:1!important;margin-bottom:8px}
+@media(max-width:1050px){.nav-7{display:none}}
+@media(max-width:800px){.entry-grid{grid-template-columns:1fr}.content-item{grid-template-columns:1fr;gap:8px}.template-steps{grid-template-columns:1fr 1fr}.page-hero{padding:18vw 7vw 10vw}}
