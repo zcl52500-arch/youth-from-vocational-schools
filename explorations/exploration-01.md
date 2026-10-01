@@ -1,5 +1,7 @@
 ---
 layout: exploration
+order: 1
+summary: "从真实问题开始，记录行动、变化、困难和今天的重新理解。"
 title: "成长小组"
 question: "当学生需要成长，我们能做什么？"
 year: "[年份]"
