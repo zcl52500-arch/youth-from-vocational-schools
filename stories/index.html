@@ -1,11 +1,15 @@
+---
+---
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>他们的十年｜看见职校生</title><link rel="stylesheet" href="../style.css"></head><body><header class="site-header"><div class="brand"><a href="../">看见职校生</a></div><nav class="nav-7"><a href="../why/">为什么是职校生</a><a href="../history/">从哪里开始</a><a href="../stories/">他们的十年</a><a href="../explorations/">我们做过的探索</a><a href="../after-ten-years/">十年之后</a><a href="../questions/">还想看见什么</a><a href="../archive/">十年档案</a></nav></header>
 <main>
 <section class="page-hero"><p class="eyebrow">03 · THEIR TEN YEARS</p><h1>他们的十年</h1><p>我们不想用一个“典型职校生”概括一群人。这里保存很多个具体的人：当时发生了什么，后来去了哪里，现在怎样生活，以及今天的他/她如何回头看那段经历。</p><div class="template-steps"><span>当时</span><span>后来</span><span>现在</span><span>回头看</span><span>他/她自己说</span></div><a class="back-home" href="../">← 返回首页</a></section>
 <section class="collection-intro"><p class="eyebrow">PEOPLE, NOT CASES</p><h2>一个人，一页。<br>不是“成功案例”。</h2><p>人物档案会随着回访、旧照片、学生写作和新的访谈慢慢补充。资料还没有整理完成的地方，就先诚实地留白。</p></section>
 <section class="record-list">
-<a class="record" href="person-01.html"><div class="record-meta">STORY 01<br>模板示例</div><div><h3>一个人的十年</h3><p>从17岁进入职业学校，到实习、毕业、工作、换城市、建立新的关系……重点不是证明一次教育活动“改变了谁”，而是重新听一个人怎样理解自己的生活。</p><span class="status">打开人物内容页 →</span></div></a>
-<article class="record record-placeholder"><div class="record-meta">STORY 02<br>待整理</div><div><h3>下一位具体的人</h3><p>这里将放真实人物的回访。没有材料之前，不用虚构姓名、经历或结果。</p><span class="status">采访 / 资料整理中</span></div></article>
-<article class="record record-placeholder"><div class="record-meta">OPEN<br>持续更新</div><div><h3>旧材料也可以重新进入今天</h3><p>学生写作、排练照片、实习记录、旧视频和十年后的访谈，可以共同构成一个人的档案，而不必被压缩成一条“成长成果”。</p><span class="status">持续征集与整理</span></div></article>
+{% assign people = site.pages | where: "layout", "person" | sort: "order" %}
+{% for person in people %}
+<a class="record" href="{{ person.url | relative_url }}"><div class="record-meta">STORY {{ forloop.index | prepend: '0' | slice: -2, 2 }}<br>{{ person.status | default: "持续更新" }}</div><div><h3>{{ person.title }}</h3><p>{{ person.intro }}</p><span class="status">打开人物档案 →</span></div></a>
+{% endfor %}
+<article class="record record-placeholder"><div class="record-meta">ADD<br>新增人物</div><div><h3>下一位具体的人</h3><p>复制一份人物内容文件，填写真实材料；目录会自动增加，不需要再修改这个页面。</p><span class="status">内容持续增加</span></div></article>
 </section>
 <div class="editorial-note"><strong>编辑原则</strong><p>人物是网站的情感核心。先尊重一个人的复杂生活，再讨论教育、工作与成长；不把人物变成项目成果的证据。</p></div>
 </main><footer><span>看见职校生</span><span>HOPE学堂 · 2016—2026</span></footer></body></html>
