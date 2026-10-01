@@ -17,4 +17,13 @@ happened: |
   材料待整理：发生了什么，包括没有发生的变化、困难和意外。
 reflection: |
   材料待整理：今天重新看，我们怎么理解它？
+# 可选：行动现场照片。
+# gallery:
+#   - src: "/images/explorations/照片.jpg"
+#     alt: "照片内容说明"
+#     caption: "年份 / 地点 / 来源"
+# 可选：教案、海报、视频、学生作品等原始材料。
+# materials:
+#   - label: "项目教案"
+#     url: "/assets/archive/文件.pdf"
 ---
