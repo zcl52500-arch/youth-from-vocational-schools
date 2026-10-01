@@ -240,3 +240,13 @@ footer{display:flex;justify-content:space-between;padding:22px 5vw;background:va
 .material-links a{padding:16px 0;border-bottom:1px solid var(--line);font-weight:800;color:var(--blue);text-decoration:none}
 .material-links a:hover{color:var(--green)}
 @media(max-width:700px){.media-grid{grid-template-columns:1fr}}
+
+/* 3.2 收束页：让职校学生成长成为主角，HOPE只作为参与者署名 */
+.closing{padding:92px 8vw 64px;background:var(--paper);border-top:1px solid var(--line)}
+.closing p{font-size:clamp(23px,3.2vw,40px)}
+.closing-line{margin-top:38px}
+.hope-signature{margin:52px auto 0;padding-top:28px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:6px;width:min(320px,80vw);font-size:11px;color:var(--muted);font-weight:400;letter-spacing:.08em}
+.hope-signature::before{content:"HOPE学堂有幸参与其中";font-size:11px;color:var(--muted);letter-spacing:.08em;margin-bottom:8px}
+.hope-signature img{display:block;width:auto;max-width:104px;max-height:44px;object-fit:contain;opacity:.78}
+.hope-signature-fallback{font-size:15px!important;font-weight:800;letter-spacing:.04em!important;color:var(--muted)!important;margin:0!important}
+@media(max-width:700px){.closing{padding:72px 7vw 50px}.hope-signature{margin-top:40px}}
