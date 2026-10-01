@@ -1,0 +1,33 @@
+name: Validate 3.2 site
+
+on:
+  push:
+    branches: [design-3.2]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build GitHub Pages site
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Verify generated pages
+        shell: bash
+        run: |
+          test -f _site/index.html
+          test -f _site/stories/index.html
+          test -f _site/stories/person-01.html
+          test -f _site/explorations/index.html
+          test -f _site/explorations/exploration-01.html
+          test -f _site/archive/index.html
+          grep -q "一个人的十年" _site/stories/index.html
+          grep -q "成长小组" _site/explorations/index.html
