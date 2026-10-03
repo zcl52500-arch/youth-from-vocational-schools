@@ -15,7 +15,7 @@ function local(path) {
  return url.origin === root.origin && url.pathname.startsWith(root.pathname) ? url.href : null;
 }
 function target(item) {
- return local(item.url) || (Array.isArray(item.chapters) && item.chapters.length ? new URL("explorations/detail.html?id=" + encodeURIComponent(item.id), root).href : null);
+ return local(item.url) || (Array.isArray(item.chapters) && item.chapters.length ? new URL("materials/detail.html?id=" + encodeURIComponent(item.id), root).href : null);
 }
 fetch(new URL("data/content.json", root)).then(response => {
  if (!response.ok) throw new Error("资料读取失败");
@@ -25,7 +25,7 @@ fetch(new URL("data/content.json", root)).then(response => {
  const items = data.items.filter(item => item.published === true);
  if (list) {
   const fragment = document.createDocumentFragment();
-  items.filter(item => item.category === list.dataset.contentCategory).forEach((item, index) => {
+  items.filter(item => list.dataset.contentCategory === "all" ? !["growth-group","writing-expression","shadow","teacher-cooperation","community-action"].includes(item.id) : item.category === list.dataset.contentCategory).forEach((item, index) => {
    const href = target(item);
    const card = el(href ? "a" : "article", "record exploration-record" + (href ? "" : " record-placeholder"));
    if (href) card.href = href;
@@ -42,21 +42,30 @@ fetch(new URL("data/content.json", root)).then(response => {
   if (fragment.childNodes.length) list.replaceChildren(fragment);
  }
  if (detail) {
-  const item = items.find(item => item.id === new URLSearchParams(location.search).get("id") && item.category === "explorations");
+  const item = items.find(item => item.id === new URLSearchParams(location.search).get("id"));
   if (!item || !Array.isArray(item.chapters) || !item.chapters.length) { detail.textContent = "这份记录尚未发布。"; return; }
   document.title = item.title + "｜看见职校生";
   document.querySelector("[data-title]").textContent = item.title;
+  const category = data.categories.find(c => c.id === item.category);
+  document.querySelectorAll("[data-category-back]").forEach(a => { a.href = new URL(item.category + "/", root).href; a.textContent = "← 返回「" + (category?.title || "所属栏目") + "」"; });
   document.querySelector("[data-summary]").textContent = item.summary || "";
   document.querySelector("[data-meta]").textContent = [item.year, item.date, item.location].filter(Boolean).join(" · ");
   const fragment = document.createDocumentFragment();
   item.chapters.forEach((chapter, index) => {
    const section = el("section", "case-chapter");
-   section.append(el("span", "chapter-tag", String(index + 1).padStart(2, "0") + " · " + chapter.label), el("h2", "", chapter.title));
+   if(chapter.label) section.append(el("span", "chapter-tag", String(index + 1).padStart(2, "0") + " · " + chapter.label));
+   if(chapter.title) section.append(el("h2", "", chapter.title));
    (chapter.paragraphs || []).forEach(paragraph => section.append(el("p", "", paragraph)));
    const imagePath = local(chapter.image);
    if (imagePath) { const figure = el("figure"); const image = el("img", "content-cover"); image.src = imagePath; image.alt = chapter.caption || chapter.title; figure.append(image); if(chapter.caption) figure.append(el("figcaption", "", chapter.caption)); section.append(figure); }
    fragment.append(section);
   });
+  if (item.attachments?.length) {
+   const section=el("section","case-chapter"); section.append(el("h2","","相关材料"));
+   item.attachments.forEach(file=>{const href=local(file.path);if(href){const p=el("p");const a=el("a","",file.name);a.href=href;a.target="_blank";a.rel="noopener";p.append(a);section.append(p);}});
+   fragment.append(section);
+  }
+  if (item.external && /^https:\/\//i.test(item.external)) { const p=el("p");const a=el("a","","查看视频或外部资料 →");a.href=item.external;a.target="_blank";a.rel="noopener noreferrer";p.append(a);fragment.append(p); }
   detail.replaceChildren(fragment);
  }
 }).catch(error => {
