@@ -1,0 +1,94 @@
+{
+  "site": {
+    "title": "看见职校生",
+    "subtitle": "HOPE学堂 2016—2026",
+    "description": "一个关于职校生、青年成长、教育实践与HOPE自身实践经验的长期公共档案。"
+  },
+  "categories": [
+    {
+      "id": "why",
+      "title": "为什么是职校生"
+    },
+    {
+      "id": "history",
+      "title": "从哪里开始"
+    },
+    {
+      "id": "stories",
+      "title": "他们的十年"
+    },
+    {
+      "id": "explorations",
+      "title": "我们做过的探索"
+    },
+    {
+      "id": "after-ten-years",
+      "title": "十年之后"
+    },
+    {
+      "id": "questions",
+      "title": "还想看见什么"
+    },
+    {
+      "id": "archive",
+      "title": "十年档案"
+    }
+  ],
+  "items": [
+    {
+      "id": "growth-group",
+      "category": "explorations",
+      "label": "成长小组",
+      "title": "当学生需要成长，我们能做什么？",
+      "summary": "以成长小组为入口，示范一篇探索记录应该怎样从真实问题开始，而不是从项目名称开始。",
+      "question": "问题先于方法。",
+      "status": "查看探索案例结构 →",
+      "url": "explorations/exploration-template.html",
+      "published": true
+    },
+    {
+      "id": "writing-expression",
+      "category": "explorations",
+      "label": "写作与表达",
+      "title": "一个人的经验，怎样成为可以被认真讨论的材料？",
+      "summary": "把学生写作、表达实践和后来对“讲述自己”的理解放在同一个脉络里。",
+      "question": "",
+      "status": "材料待整理",
+      "url": "",
+      "published": true
+    },
+    {
+      "id": "shadow",
+      "category": "explorations",
+      "label": "戏剧《影子》",
+      "title": "能不能从讲述生活，走向共同创造一个作品？",
+      "summary": "排练、台词、学生创作与现场照片都可以成为案例的一部分。",
+      "question": "",
+      "status": "重点案例 · 待整理",
+      "url": "",
+      "published": true
+    },
+    {
+      "id": "teacher-cooperation",
+      "category": "explorations",
+      "label": "教师合作",
+      "title": "只陪伴学生够吗？",
+      "summary": "记录实践策略如何从直接面向学生，逐渐走向与教师一起工作。",
+      "question": "",
+      "status": "材料待整理",
+      "url": "",
+      "published": true
+    },
+    {
+      "id": "community-action",
+      "category": "explorations",
+      "label": "社区与行动",
+      "title": "当问题不只是“想一想”，我们能不能一起做一点什么？",
+      "summary": "社区实践、服务学习与共同参与，可以在这里继续生长。",
+      "question": "",
+      "status": "持续更新",
+      "url": "",
+      "published": true
+    }
+  ]
+}

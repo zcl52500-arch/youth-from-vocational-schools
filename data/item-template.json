@@ -1,0 +1,61 @@
+{
+  "id": "replace-with-unique-id",
+  "category": "explorations",
+  "label": "探索主题",
+  "title": "填写标题",
+  "year": "",
+  "date": "",
+  "location": "",
+  "summary": "填写两三句话摘要",
+  "cover": "",
+  "coverAlt": "",
+  "status": "阅读探索记录 →",
+  "published": false,
+  "chapters": [
+    {
+      "label": "遇到了什么",
+      "title": "遇到了什么",
+      "paragraphs": [
+        "请替换为有真实材料支持的文字。"
+      ],
+      "image": "",
+      "caption": ""
+    },
+    {
+      "label": "为什么想试",
+      "title": "为什么想试",
+      "paragraphs": [
+        "请替换为有真实材料支持的文字。"
+      ],
+      "image": "",
+      "caption": ""
+    },
+    {
+      "label": "具体做了什么",
+      "title": "具体做了什么",
+      "paragraphs": [
+        "请替换为有真实材料支持的文字。"
+      ],
+      "image": "",
+      "caption": ""
+    },
+    {
+      "label": "发生了什么",
+      "title": "发生了什么",
+      "paragraphs": [
+        "请替换为有真实材料支持的文字。"
+      ],
+      "image": "",
+      "caption": ""
+    },
+    {
+      "label": "今天怎么理解",
+      "title": "今天怎么理解",
+      "paragraphs": [
+        "请替换为有真实材料支持的文字。"
+      ],
+      "image": "",
+      "caption": ""
+    }
+  ]
+}

@@ -173,3 +173,7 @@ footer{display:flex;justify-content:space-between;padding:22px 5vw;background:va
 @media(max-width:800px){
  .record{grid-template-columns:1fr;gap:8px}.collection-intro{padding-top:55px}.record-list{padding-left:7vw;padding-right:7vw}.case-hero,.case-body{padding-left:7vw;padding-right:7vw}
 }
+
+/* 资料图片沿用现有内容页排版 */
+.content-cover{display:block;max-width:100%;height:auto;margin:24px 0;border-radius:2px}
+.case-chapter figure{margin:30px 0}.case-chapter figcaption{font-size:13px;color:var(--muted)}
