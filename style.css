@@ -251,3 +251,18 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--yellow);outline-off
 @media(max-width:1050px){.site-header{align-items:flex-start;gap:14px}.nav-7{gap:9px 16px;font-size:12px}}
 @media(max-width:800px){.hero{min-height:auto;padding:60px 7vw;grid-template-columns:1fr}.hero-mark{width:105px;height:105px;font-size:38px;margin-top:12px}.hero-mark small{font-size:9px}.home-categories .entry-card{padding:26px}.home-categories .entry-card:nth-child(3),.home-categories .entry-card:nth-child(4){min-height:230px}.page-hero{padding:45px 7vw 35px}.collection-intro{padding:45px 7vw 20px}.record-list{padding:15px 7vw 45px}.record{grid-template-columns:1fr;gap:10px}.record .content-cover{width:125px;height:90px;margin-left:18px}.record-meta br{display:none}.record-meta{display:flex;gap:12px}}
 @media(max-width:420px){.record .content-cover{float:none;width:100%;height:165px;margin:0 0 16px}.home-categories .entry-card h2{font-size:26px}.home-categories .entry-card:nth-child(3) h2,.home-categories .entry-card:nth-child(4) h2{font-size:30px}}
+
+/* 首页十年时间轴 */
+.anniversary-timeline{padding:60px max(7vw,calc((100vw - 1040px)/2)) 68px}
+.timeline-intro{max-width:1040px;margin:0 auto 38px}.timeline-intro .eyebrow{color:var(--yellow);font-size:11px}
+.timeline-intro h2{font-size:clamp(26px,3vw,38px);line-height:1.35;margin:10px 0 0;letter-spacing:-.025em}
+.anniversary-timeline .timeline{list-style:none;padding:0;margin:0 auto;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px}
+.anniversary-timeline li{border-top:1px solid #69777e;position:relative;padding-top:24px}
+.anniversary-timeline li:before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--yellow)}
+.anniversary-timeline a{display:block;text-decoration:none}.anniversary-timeline time{font-size:15px;font-weight:700;color:var(--yellow);letter-spacing:.05em}
+.anniversary-timeline h3{font-size:23px;line-height:1.4;margin:12px 0}.anniversary-timeline p{font-size:14px;color:#bdc9cd;line-height:1.8;max-width:290px}
+.anniversary-timeline .timeline-link{display:inline-block;margin-top:12px;color:#dfe7e9;font-size:12px;font-weight:500;letter-spacing:0}
+.anniversary-timeline a:hover h3{color:var(--yellow)}
+@media(max-width:800px){.anniversary-timeline{padding:45px 7vw 50px}.anniversary-timeline .timeline{display:block;border-left:1px solid #69777e;margin-left:4px;padding-left:25px}.anniversary-timeline li{border-top:0;padding:0 0 32px}.anniversary-timeline li:last-child{padding-bottom:0}.anniversary-timeline li:before{left:-30px;top:8px}.anniversary-timeline h3{font-size:21px;margin:8px 0}.anniversary-timeline p{max-width:none;margin:8px 0}.timeline-intro{margin-bottom:30px}}
+
+.home-categories .entry-card:nth-child(5) h2{font-size:34px}.home-categories .entry-card:nth-child(5){background:#fffaf0;border-top:4px solid var(--yellow)}
