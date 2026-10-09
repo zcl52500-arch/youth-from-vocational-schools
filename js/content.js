@@ -56,6 +56,12 @@ fetch(new URL("data/content.json",root),{cache:"no-cache"}).then(r=>{if(!r.ok)th
    (chapter.paragraphs||[]).forEach(p=>appendText(fragment,p));
    const image=local(chapter.image);if(image){const figure=el("figure");const img=el("img","content-cover");img.src=image;img.alt=chapter.caption||chapter.title||"";figure.append(img);if(chapter.caption)figure.append(el("figcaption","",chapter.caption));fragment.append(figure);}
   });
+  if(Array.isArray(item.sourceGroups))item.sourceGroups.forEach(group=>{
+   const section=el("section","source-group");section.append(el("h2","",group.title));
+   const list=el("ul","source-list");
+   (group.items||[]).forEach(source=>{if(typeof source.url!=="string"||!/^https:\/\//i.test(source.url))return;const li=el("li");const type=el("span","source-type",source.type);const a=el("a","",source.title);a.href=source.url;a.target="_blank";a.rel="noopener noreferrer";li.append(type,a);list.append(li);});
+   section.append(list);fragment.append(section);
+  });
   if(item.attachments?.length){const section=el("section","related-materials");section.append(el("h2","","相关材料"));item.attachments.forEach(file=>{const href=local(file.path);if(href){const p=el("p");const a=el("a","",file.name);a.href=href;a.target="_blank";a.rel="noopener";p.append(a);section.append(p);}});fragment.append(section);}
   if(item.external&&/^https:\/\//i.test(item.external)){const p=el("p");const a=el("a","","查看视频或外部资料 →");a.href=item.external;a.target="_blank";a.rel="noopener noreferrer";p.append(a);fragment.append(p);}
   detail.replaceChildren(fragment);
