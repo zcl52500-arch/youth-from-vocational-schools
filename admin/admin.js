@@ -14,11 +14,18 @@ function renderList(){
  $("records").replaceChildren();
  data.items.forEach(item=>{const b=document.createElement("button");b.type="button";b.textContent=(item.published?"已发布 · ":"草稿 · ")+item.title;b.onclick=()=>{if(dirty&&!confirm("有尚未保存的修改，确定切换材料吗？"))return;open(item);};$("records").append(b);});
 }
+function updateTopics(value=""){
+ const topics=data.categories.find(c=>c.id===$("category").value)?.topics||[];
+ $("topic").replaceChildren();const blank=document.createElement("option");blank.value="";blank.textContent="不指定方向";$("topic").append(blank);
+ topics.forEach(t=>{const o=document.createElement("option");o.value=t;o.textContent=t;$("topic").append(o);});$("topic").value=value;$("topic-field").hidden=!topics.length;
+}
+$("category").addEventListener("change",()=>updateTopics());
 function open(item=null){
  selected=item?.id||null;baseline=item?structuredClone(item):null;
  $("editor").reset();
  for(const field of ["category","title","summary","date","label","external"])$(field).value=item?.[field]|| (field==="category"?"explorations":"");
- $("body").value=(item?.chapters||[]).map(ch=>[ch.title,...(ch.paragraphs||[])].filter(Boolean).join("\n\n")).join("\n\n");
+ updateTopics(item?.topic||"");
+ $("body").value=item?.body??(item?.chapters||[]).map(ch=>[ch.title,...(ch.paragraphs||[])].filter(Boolean).join("\n\n")).join("\n\n");
  $("existing-cover").textContent=item?.cover?"已有封面："+item.cover:"";
  $("preview-content").hidden=true;renderAttachments();dirty=false;
 }
@@ -40,7 +47,8 @@ $("new").onclick=()=>{if(dirty&&!confirm("有尚未保存的修改，确定新�
 $("editor").addEventListener("input",()=>{dirty=true;});
 $("preview").onclick=()=>{
  const area=$("preview-content");area.replaceChildren();const h=document.createElement("h2");h.textContent=$("title").value;area.append(h);
- [$("summary").value,...$("body").value.split(/\n\s*\n/)].filter(Boolean).forEach(text=>{const p=document.createElement("p");p.textContent=text;area.append(p);});area.hidden=false;
+ if($("summary").value){const p=document.createElement("p");p.textContent=$("summary").value;area.append(p);}
+ $("body").value.split(/\n\s*\n/).filter(Boolean).forEach(block=>{let plain=[];function flush(){if(plain.length){const p=document.createElement("p");p.textContent=plain.join("\n");p.style.whiteSpace="pre-line";area.append(p);plain=[];}}block.split("\n").forEach(line=>{const heading=line.match(/^(#{2,3})\s+(.+)$/);if(heading){flush();const h=document.createElement(heading[1].length===2?"h2":"h3");h.textContent=heading[2];area.append(h);}else plain.push(line);});flush();});area.hidden=false;
 };
 async function upload(file){
  if(file.size>10*1024*1024)throw new Error("单个文件不能超过 10 MB："+file.name);
@@ -63,9 +71,9 @@ $("editor").onsubmit=async event=>{
  try{
  const original=selected?data.items.find(x=>x.id===selected):{};
  const id=selected||crypto.randomUUID();
- const fields=Object.fromEntries(["category","title","summary","date","label","body","external"].map(f=>[f,$(f).value]));
+ const fields=Object.fromEntries(["category","topic","title","summary","date","label","body","external"].map(f=>[f,$(f).value]));
  const item=makeItem(original,fields,id,published);
- const oldBody=(original.chapters||[]).map(ch=>[ch.title,...(ch.paragraphs||[])].filter(Boolean).join("\n\n")).join("\n\n");
+ const oldBody=original.body??(original.chapters||[]).map(ch=>[ch.title,...(ch.paragraphs||[])].filter(Boolean).join("\n\n")).join("\n\n");
  if(fields.body===oldBody)item.chapters=structuredClone(original.chapters||[]);item.attachments=structuredClone(baseline?.attachments||[]);
  const latest=await snapshot();
  let merged=mergeItem(latest.data,item,selected?original:null);

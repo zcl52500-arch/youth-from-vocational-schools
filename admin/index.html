@@ -1,13 +1,13 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://api.github.com; img-src 'self' blob:; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'none'"><title>材料管理｜看见职校生</title><link rel="stylesheet" href="admin.css"></head><body><header><a href="../">← 看见职校生</a><h1>材料管理</h1><button id="logout" hidden>断开连接</button></header><main>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://api.github.com; img-src 'self' blob:; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'none'"><title>文章管理｜我们一起走过</title><link rel="stylesheet" href="admin.css"></head><body><header><a href="../">← 我们一起走过</a><h1>文章管理</h1><button id="logout" hidden>断开连接</button></header><main>
 <section id="connection"><h2>连接你的仓库</h2><p>授权码只用于当前页面，刷新或关闭后需要重新连接。不要把授权码发到聊天里。</p><label>GitHub 授权码<input id="token" type="password" autocomplete="off"></label><button id="connect">连接</button>
 <details><summary>首次使用：如何取得授权码</summary><ol><li><a href="https://github.com/settings/personal-access-tokens/new?name=HOPE-content-editor&contents=write" target="_blank" rel="noopener noreferrer">打开 GitHub 授权码设置</a>，必要时登录。</li><li>Resource owner 选择 zcl52500-arch；Repository access 选择 Only select repositories，勾选 youth-from-vocational-schools。</li><li>Repository permissions 中 Contents 设为 Read and write。设置有效期，点击 Generate token。</li><li>复制生成的授权码，回到此页粘贴并连接。它不是你的 GitHub 登录密码。</li></ol><p>未发布草稿不会展示在网站，但仍保存在公开仓库中。敏感材料请勿上传。视频建议先上传视频平台，再填写链接；单个附件最多 10 MB。</p></details></section>
 <p id="message" role="status" aria-live="polite"></p>
 <div id="workspace" hidden><aside><button id="new">＋ 新增材料</button><h2>已有材料</h2><div id="records"></div></aside><section><form id="editor">
 <label>栏目<select id="category" required></select></label>
-<label>标题<input id="title" required maxlength="200"></label>
+<label id="topic-field" hidden>方向（可选）<select id="topic"></select></label><label>标题<input id="title" required maxlength="200"></label>
 <label>摘要<textarea id="summary" rows="3"></textarea></label>
 <div class="row"><label>日期<input id="date" type="date"></label><label>主题或标签<input id="label"></label></div>
-<label>正文<textarea id="body" rows="15" placeholder="直接填写正文。段落之间空一行。"></textarea></label>
+<details><summary>写作线索（可选）</summary><p>可以写相遇、经历、行动和反思，也可以按原文章的结构直接录入。小标题按需使用，摘要可留空。</p></details><label>完整正文<textarea id="body" rows="15" placeholder="在这里粘贴或撰写完整文章，段落之间空一行。不必拆成固定章节。可用 ## 小标题、### 小标题。"></textarea></label>
 <label>封面图片<input id="cover" type="file" accept="image/png,image/jpeg,image/webp,image/gif"></label><p id="existing-cover"></p>
 <label>附件（图片、PDF、Word 等）<input id="files" type="file" multiple accept=".png,.jpg,.jpeg,.webp,.gif,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.zip"></label>
 <div id="attachments"></div>

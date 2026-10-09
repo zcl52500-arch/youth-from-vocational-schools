@@ -1,6 +1,6 @@
 export function decode64(value){return new TextDecoder().decode(Uint8Array.from(atob(value.replace(/\s/g,"")),c=>c.charCodeAt(0)));}
 export function makeItem(original,fields,id,published){
- return {...original,id,category:fields.category,title:fields.title.trim(),summary:fields.summary.trim(),date:fields.date,label:fields.label.trim(),published,url:"",status:published?"阅读材料 →":"草稿",chapters:fields.body.split(/\n\s*\n/).filter(p=>p.trim()).map((p,i)=>({label:"",title:"",paragraphs:[p.trim()]})),external:fields.external.trim(),attachments:original.attachments||[]};
+ return {...original,id,category:fields.category,title:fields.title.trim(),summary:fields.summary.trim(),date:fields.date,label:fields.label.trim(),published,url:"",status:published?"阅读材料 →":"草稿",body:fields.body,topic:fields.topic||"",chapters:original.body===undefined&&original.chapters?original.chapters:[],external:fields.external.trim(),attachments:original.attachments||[]};
 }
 export function mergeItem(data,item,baseline){
  const current=data.items.find(x=>x.id===item.id);
