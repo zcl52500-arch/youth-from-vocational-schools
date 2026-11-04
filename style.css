@@ -285,3 +285,17 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--yellow);outline-off
 @media(max-width:800px){.anniversary-timeline{padding:28px 24px;margin:20px 7vw 30px}.anniversary-timeline .timeline-intro h2{font-size:23px}.anniversary-timeline .timeline{border-left-color:#bdcccf;margin-left:3px;padding-left:22px}.anniversary-timeline li{padding-top:0;padding-bottom:24px}.anniversary-timeline li:before{left:-26px;top:8px}.anniversary-timeline h3{font-size:18px}}
 
 .source-list{list-style:none;padding:0;margin:20px 0}.source-list li{padding:16px 0;border-bottom:1px solid var(--line)}.source-list a{display:block;text-decoration:none;font-size:17px;line-height:1.7}.source-list a:hover{text-decoration:underline}.source-type{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}.source-group h2{font-size:25px}
+
+
+/* HOPE学堂十周年展入口：与原站共享视觉识别 */
+.nav-anniversary{color:var(--blue)!important;font-weight:800;border-bottom:2px solid var(--yellow);padding-bottom:3px}
+.anniversary-invite{max-width:1100px;margin:34px auto 44px;padding:44px 54px;background:#eaf2f5;border-left:5px solid var(--blue);display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:35px;align-items:center}
+.anniversary-invite .eyebrow{font-size:10px;margin-bottom:12px}
+.anniversary-invite h2{font-size:clamp(30px,4vw,46px);line-height:1.2;margin:0 0 12px;letter-spacing:-.035em}
+.anniversary-invite p:not(.eyebrow){font-size:15px;color:#5d6c72;max-width:620px;margin:0 0 18px}
+.anniversary-invite-copy>a{display:inline-flex;gap:24px;align-items:center;color:var(--blue);font-size:13px;font-weight:800;text-decoration:none;border-bottom:2px solid var(--yellow);padding-bottom:5px}
+.anniversary-invite-mark{width:126px;height:126px;border-radius:50%;background:var(--yellow);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(6deg);color:var(--ink)}
+.anniversary-invite-mark strong{font-size:52px;line-height:.9;letter-spacing:-.08em}
+.anniversary-invite-mark span{font-size:8px;line-height:1.4;letter-spacing:.17em;text-align:center;font-weight:800;margin-top:8px}
+@media(max-width:1120px){.anniversary-invite{margin-left:5vw;margin-right:5vw}}
+@media(max-width:800px){.anniversary-invite{margin:24px 7vw 32px;padding:30px 25px;grid-template-columns:1fr;gap:20px}.anniversary-invite-mark{width:90px;height:90px}.anniversary-invite-mark strong{font-size:38px}.nav-anniversary{display:inline-block}}
