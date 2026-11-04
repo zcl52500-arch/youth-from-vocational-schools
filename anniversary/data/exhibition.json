@@ -1,0 +1,38 @@
+{
+  "title": "HOPE学堂十周年展",
+  "subtitle": "十年，一起走过",
+  "period": "2016—2026",
+  "description": "回望HOPE学堂与学生、老师、伙伴一起走过的十年：相遇、探索、故事与面向未来的思考。",
+  "timeline": [
+    {
+      "year": "2016",
+      "title": "从相遇开始",
+      "description": "走进学校，了解同学们关心的话题，并开始筹备社团。",
+      "itemId": "dfb1ae36-2b9d-4149-80a9-21f8ffa0230e",
+      "linkLabel": "阅读相关记录 ↗"
+    },
+    {
+      "year": "2017",
+      "title": "把剧场带进社团",
+      "description": "邀请剧场工作者开展社团课，在实践中探索剧场与学生工作的连接。",
+      "itemId": "dfb1ae36-2b9d-4149-80a9-21f8ffa0230e",
+      "linkLabel": "阅读相关记录 ↗"
+    },
+    {
+      "year": "2026",
+      "title": "回望，也向前",
+      "description": "整理一起走过的故事，继续思考如何面对变化中的教育、工作与生活。",
+      "href": "../after-ten-years/",
+      "linkLabel": "继续阅读前瞻思考 ↗"
+    }
+  ],
+  "featuredItemIds": [
+    "dfb1ae36-2b9d-4149-80a9-21f8ffa0230e"
+  ],
+  "galleries": [
+    {"id": "beginning", "title": "为什么出发", "href": "../why/"},
+    {"id": "practice", "title": "实践与探索", "href": "../explorations/"},
+    {"id": "people", "title": "一起走过的人", "href": "../stories/"},
+    {"id": "future", "title": "继续向前", "href": "../after-ten-years/"}
+  ]
+}
